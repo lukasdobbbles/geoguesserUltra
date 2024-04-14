@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block head%}
+<style>
+  .mainCard {
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+  }
+</style>
+
+{% endblock %} {% block body %}
+<section class="hero is-link">
+  <div class="hero-body">
+    <p class="title">GeoUltimate</p>
+    <p class="subtitle">
+      the best free GeoGuessr alternative to play with friends!
+    </p>
+  </div>
+</section>
+
+<div class="card mainCard">
+  <div class="card-content">
+    <p class="title is-4">Street View Coverage</p>
+    <p class="subtitle">
+      Put this side by side with your guess if you want so that you can rule out
+      some of your guesses. Most GeoGuessr pro's have this memorized!
+    </p>
+  </div>
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img
+        src="public/PLACES_WITHOUT_STREETVIEW.webp"
+        alt="places without streetview"
+      />
+    </figure>
+  </div>
+</div>
+{% endblock %}

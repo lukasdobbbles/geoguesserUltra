@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block head %}
+<link href="public/style.css" rel="stylesheet" />
+
+{% endblock %} {% block extraNavbar %}
+<div class="navbar-item">
+  <h1 id="roomCode"></h1>
+</div>
+<div class="navbar-item">
+  <h1 id="countdown"></h1>
+</div>
+<div class="navbar-item">
+  <h1 id="roundCount"></h1>
+</div>
+{% endblock %} {% block body %}
+
+<div id="join_logic" class="container">
+  <div class="field">
+    <label class="label">Enter Room ID</label>
+    <div class="control">
+      <input class="input" type="text" placeholder="Room ID" id="roomID" />
+    </div>
+    <button id="join_room_btn" class="button">Join Room</button>
+  </div>
+
+  <button class="button" id="create_room_btn">Create a Room</button>
+</div>
+
+<div id="intermission_logic" class="container" style="display: none">
+  <p>Waiting for someone to join...</p>
+</div>
+
+<div id="game_logic" style="display: none">
+  <div id="map-container">
+    <div id="map"></div>
+    <button id="guess" class="button is-primary is-fullwidth">Guess</button>
+  </div>
+  <div id="pano"></div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initialize&v=weekly"
+    defer
+  ></script>
+</div>
+
+<div id="modal"></div>
+
+<script src="/public/duel.js"></script>
+{% endblock %}

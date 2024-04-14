@@ -1,0 +1,28 @@
+#map-container {
+  transition: height 0.5s, width 0.5s;
+  width: 400px;
+  height: 200px;
+  right: 20px;
+  bottom: 70px;
+  position: absolute;
+  z-index: 2;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#guess {
+  margin: 10px 0;
+}
+
+#map-container:hover {
+  width: 1200px;
+  height: 600px;
+}
+
+#pano {
+  position: unset !important;
+  z-index: 1;
+}

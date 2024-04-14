@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoUltimate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/7b7b6085db.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .loginForm {
+        width: 50%;
+      }
+    </style>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a href="/" class="navbar-item">
+          <span class="icon"> <i class="fa-solid fa-location-pin"></i> </span>
+          GeoUltimate
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="button navbar-item" href="/play">Singleplayer</a>
+          {% if session.get("user")["username"] %}
+          <a class="button navbar-item" href="/duel">Duel</a>
+          <p>
+            <span class="icon"> <i class="fas fa-user"></i> </span>Hello
+            <strong>{{ session.get("user")["username"] }}</strong>
+          </p>
+
+          {% else %}
+          <a class="navbar-item" disabled href="#"
+            >Duel (please create an account to use this feature)</a
+          >
+          <a class="navbar-item" href="/login">Login</a>
+          <a class="navbar-item" href="/signup">Sign Up</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="navbar-end">{% block extraNavbar %}{% endblock %}</div>
+    </nav>
+    {% block body %}{% endblock %}
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>GeoUltimate</strong> by
+          <a href="https://oc-lukas.static.domains/">Lukas Dobbles</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

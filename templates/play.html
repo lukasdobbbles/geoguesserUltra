@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block head %}
+<link href="public/style.css" rel="stylesheet" />
+{% endblock %} {% block body %}
+<svg width="90" height="90">
+  <image xlink:href="/public/pacman-loading.svg" width="90" height="90" />
+</svg>
+<div id="map-container">
+  <div id="map"></div>
+  <button id="guess" class="button is-primary is-fullwidth" disabled>
+    Guess
+  </button>
+</div>
+<div id="pano"></div>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initialize&v=weekly"
+  defer
+></script>
+<script src="/public/script.js"></script>
+{% endblock %}
